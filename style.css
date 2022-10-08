@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+   height: 100vh;
+  
+}
+.bg.blur{
+    opacity: 0.2;
+}
+.bg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+header{
+    margin-top: 2rem;
+    font-size: 2rem;
+    
+}
+#form{
+    padding: 2rem;
+    margin: 2rem;
+    position: absolute;
+    top: 10rem;
+    left: 29rem;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    background-color: rgb(252, 252, 246);
+    pointer-events: none;
+    
+}
+#form.active{
+opacity: 1;
+box-shadow: 5px 6px 4px rgb(0, 0, 0,0.4) ;
+background-color: rgb(255, 252, 249);
+pointer-events:auto ;
+transition: 300ms;
+}
+
+input,label{
+    padding: 0.2rem;
+    font-size: 1.2rem;
+}
+#addbook{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+padding: 1rem;
+font-size: 1.4rem;
+}
+.bookgrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(19rem,1fr));
+    gap: 2rem;
+    overflow: auto;
+    width:100%;
+    flex: 1;
+    background-color: rgb(248, 245, 242);
+    box-shadow: 2px 4px 3px rgb(201, 201, 201) ;
+    
+}
+.card{
+    display: flex;
+    padding: 2rem;
+    /* border: 1px solid black; */
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+    box-shadow: 2px 4px 3px rgb(201, 201, 201) ;
+    background-color: rgb(255, 255, 255);
+    height: 18rem;
+    border-left: solid 0.6rem yellow;
+    max-width: 16rem;
+}
+
+.readbtn{
+    padding: 0.4rem;
+    border-radius: 5px;
+    width: 45%;
+    align-self: center;
+    font-weight: 600;
+    
+}
+.titlediv,.pagesdiv,.authordiv{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.1rem;
+    flex: 1;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(126, 126, 126);
+}
+.deletebtn{
+    padding: 0.4rem;
+    border-radius: 5px;
+    width: 35%;
+    align-self: center;
+    background-color: rgb(245, 56, 56);
+    color: rgb(68, 8, 8);
+    font-weight: 600;
+}
+.btndiv{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
