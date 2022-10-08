@@ -21,14 +21,19 @@ let library=[];
 // const defaultobj2=new Book(`The song of ice and fire`, `George RR Martin`,321,false);
 // library.push(defaultobj2);
 
+class Book {
 
-function Book(name,author,pages,status)
-{
-    this.name=name;
-    this.author=author;
-    this.pages=pages;
-    this.status=status;
+constructor(name,author,pages,status){
+this.name=name;
+this.author=author;
+this.pages=pages;
+this.status=status;
 }
+
+
+
+}
+
 
 
 addbook.addEventListener('click',(e)=>{
@@ -51,14 +56,18 @@ submitbtn.addEventListener('click',(e)=>{
 
 
 });
-const addBookToLibrary=()=>{
+
+
+function addBookToLibrary(){
+
     let newbook=new Book(bookname.value,bookauthor.value,bookpages.value,bookstatus.checked);
     library.push(newbook);
     displayCard();
-    // library.forEach(book => {
-    //     displayCard(book);
-    // });
+    library.forEach(book => {
+        displayCard(book);
+    });
 }
+
 function displayCard(){
 
     bookgrid.innerHTML="";
@@ -110,6 +119,7 @@ bookgrid.append(cardDiv);
     removeBook();
     statusChange();
 }
+displayCard();
 function removeBook(){
     const removebtns=document.querySelectorAll('.deletebtn');
     let removebtnsarray=Array.from(removebtns);
@@ -131,7 +141,7 @@ function statusChange(){
         });
     });
 }
-displayCard();
+
 function clearInputs(){
     bookname.value="";
     bookauthor.value="";
